@@ -1,0 +1,5 @@
+
+# sales-intro-deck
+.claude/skills/sales-intro-deck/out/
+.claude/skills/sales-intro-deck/deck/_build_*
+__pycache__/

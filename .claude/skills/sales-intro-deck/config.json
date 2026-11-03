@@ -1,0 +1,31 @@
+{
+  "partners": [
+    {
+      "name": "Home Credit",
+      "logo": "logo-homecredit.png",
+      "sector": "spotřebitelské úvěry / finance"
+    },
+    {
+      "name": "O2",
+      "logo": "logo-o2.png",
+      "sector": "telekomunikace",
+      "style": "max-height:60px"
+    },
+    {
+      "name": "Fortuna",
+      "logo": "logo-fortuna.png",
+      "sector": "sázkové kanceláře",
+      "style": "max-width:76%"
+    },
+    {
+      "name": "ABRA",
+      "logo": "logo-abra.png",
+      "sector": "ERP software"
+    },
+    {
+      "name": "BDO",
+      "text": "BDO",
+      "sector": "audit a poradenství"
+    }
+  ]
+}
