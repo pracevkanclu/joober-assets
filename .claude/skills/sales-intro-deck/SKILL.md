@@ -162,7 +162,7 @@ Datum se doplní automaticky (český měsíc a rok, např. „listopad 2026“)
 6. Jak to vypadá v praxi (live demo ATS)
 7. **Top uchazeči pro firmu (proměnný)**
 8. Technologie, kterou nikdo jiný na trhu nemá (vlastní data, vlastní modely, AI Act ready; galaxie 70 000 dovedností)
-9. Nabídka pro prvních 100 firem: 1/10 ceny (999 Kč za inzerát) na 6 měsíců; inzerát běží 45 dní a když k němu nenajdeme žádného uchazeče nad 60 %, prodloužíme ho zdarma
+9. Nabídka pro prvních 100 firem: 1/10 ceny (999 Kč za inzerát) na 6 měsíců
 10. Předěl: Co připravujeme dál
 11. AI headhunting (live demo, kontakty)
 
