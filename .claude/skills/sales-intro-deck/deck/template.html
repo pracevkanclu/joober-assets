@@ -37,6 +37,16 @@ img{display:block}
 .eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--amber);flex:none}
 h1,h2{font-weight:700;letter-spacing:-.02em}
 .headline{font-size:64px;line-height:1.1;margin-top:24px;color:var(--ink);text-wrap:balance}
+.stech .cols{display:grid;grid-template-columns:1fr 860px;gap:64px;margin-top:56px;align-items:start}
+.stech .item{padding:30px 0;border-top:1px solid #E3E5EB}
+.stech .item:last-child{border-bottom:1px solid #E3E5EB}
+.stech .item h3{font-size:30px;font-weight:700;letter-spacing:-.015em;color:var(--ink)}
+.stech .item p{font-size:21px;line-height:1.5;color:var(--muted);margin-top:10px;text-wrap:pretty}
+.stech .gal{background:#0E0718;border-radius:28px;overflow:hidden;box-shadow:0 30px 70px rgba(40,0,80,.28)}
+.stech .gal img{display:block;width:860px;height:auto}
+.stech .gal .cap{padding:30px 40px 36px}
+.stech .gal .cap b{display:block;font-size:32px;font-weight:800;color:#fff;letter-spacing:-.015em}
+.stech .gal .cap span{display:block;font-size:20px;color:rgba(230,215,255,.78);margin-top:8px}
 .footer{position:absolute;left:96px;right:96px;bottom:48px;height:30px;display:flex;align-items:center;justify-content:space-between}
 .footer img{height:30px;width:auto}
 .footer span{font-size:15px;color:var(--muted);letter-spacing:.01em}
@@ -235,10 +245,10 @@ h1,h2{font-weight:700;letter-spacing:-.02em}
 
 <!-- 1 -->
 <section class="slide purple s1" id="s1">
-  <div class="eb">AI kariérní marketplace · revoluce v hledání práce<br>Najdeme vám lidi, kteří na pozici opravdu sedí</div>
+  <div class="eb">AI kariérní marketplace · revoluce v hledání práce</div>
   <img class="logo" src="assets/logo-amber.png" alt="Joober">
   <h1>Pracovní portály pořád vypadají jako v 90. letech.<br>Rozhodli jsme se to změnit.</h1>
-  <p class="sub">Z 80 % automaticky. Každý uchazeč seřazený a s vysvětlením, proč sedí. Recruiter začíná od nejlepších.</p>
+  <p class="sub">Uchazeče oskórujeme, seřadíme a vysvětlíme, proč sedí. Vy si jen vyberete.</p>
   <img class="bolt" src="assets/blesk-amber.png" alt="">
   <div class="bottom">Pro {{COMPANY}} · {{DATE}}</div>
 </section>
@@ -407,9 +417,24 @@ h1,h2{font-weight:700;letter-spacing:-.02em}
 </section>
 
 <!-- 7 -->
-<section class="slide" id="s5" style="background:#fff"><img src="{{CANDIDATES_PNG}}" alt="" style="width:1920px;height:1080px"></section>
+<section class="slide light stech" id="stech">
+  <div class="eyebrow">Technologie</div>
+  <h1 class="headline">Technologie, kterou nikdo jiný na trhu nemá.</h1>
+  <div class="cols">
+    <div>
+      <div class="item"><h3>Vlastní data</h3><p>CV plus chování: na co lidé klikají, kam se hlásí a proč se vracejí. Žádný obecný model tato data nemá a s každým uživatelem jich přibývá.</p></div>
+      <div class="item"><h3>Vlastní modely</h3><p>Tři interní modely (skill graph se 70 000 dovednostmi, kariérní embeddingy, signály z profilu) za jedním vysvětlitelným skóre. Žádný GPT wrapper.</p></div>
+      <div class="item"><h3>AI Act ready</h3><p>Navrženo pro požadavky AI Act na high-risk systémy: citlivé atributy vyloučeny, každé skóre vysvětlitelné.</p></div>
+    </div>
+    <div class="gal"><img src="assets/skill-galaxy.png" alt=""><div class="cap"><b>70 000 dovedností, jeden vážený graf</b><span>Propojuje související dovednosti, které keyword search nikdy nenajde.</span></div></div>
+  </div>
+  <div class="footer"><img src="assets/logo-ink.png" alt="Joober"><span>K&amp;P AI s.r.o. · joober.ai</span></div>
+</section>
 
 <!-- 8 -->
+<section class="slide" id="s5" style="background:#fff"><img src="{{CANDIDATES_PNG}}" alt="" style="width:1920px;height:1080px"></section>
+
+<!-- 9 -->
 <section class="slide purple s8" id="s8">
   <img class="ghost" src="assets/blesk-white.png" alt="" style="position:absolute">
   <img class="logo" src="assets/logo-amber.png" alt="Joober">
@@ -430,7 +455,7 @@ h1,h2{font-weight:700;letter-spacing:-.02em}
   </div>
 </section>
 
-<!-- 9 -->
+<!-- 10 -->
 <section class="slide purple s9" id="s9">
   <img class="bolt" src="assets/blesk-amber.png" alt="">
   <div class="eb">ČÁST 2</div>
@@ -438,7 +463,7 @@ h1,h2{font-weight:700;letter-spacing:-.02em}
   <img class="logo" src="assets/logo-amber.png" alt="Joober">
 </section>
 
-<!-- 10 -->
+<!-- 11 -->
 <section class="slide light s10" id="s10">
   <div class="eh"><div class="eyebrow">AI headhunting</div><span class="pill amber" style="font-size:15px;padding:10px 20px">Od roku 2027</span></div>
   <h1 class="headline">Najde nejlepší uchazeče na každou pozici,<br>i ty, kteří na inzerát ještě nereagovali.</h1>

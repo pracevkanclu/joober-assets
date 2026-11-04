@@ -1,6 +1,6 @@
 # Joober sales intro deck
 
-Claude Code skill, který z jedné šablony vyrobí sales intro prezentaci Joober pro konkrétní firmu. Výsledek je hotové PDF (10 slajdů, 16:9). Skoro celý deck je fixní. Pro každou firmu se mění jen tři věci:
+Claude Code skill, který z jedné šablony vyrobí sales intro prezentaci Joober pro konkrétní firmu. Výsledek je hotové PDF (11 slajdů, 16:9). Skoro celý deck je fixní. Pro každou firmu se mění jen tři věci:
 
 1. název firmy a datum na úvodním slajdu,
 2. slajd 5 s top uchazeči a inzeráty dané firmy (generuje se z Joober adminu),
@@ -32,7 +32,7 @@ Celý postup je popsaný ve skillu: `.claude/skills/sales-intro-deck/SKILL.md`.
   SKILL.md                 postup pro Claude (zadání, data z adminu, build, kontrola)
   config.json              partneři pro slajd „S kým už jednáme“ (loga a obory)
   deck/
-    template.html          šablona všech 10 slajdů s placeholdery
+    template.html          šablona všech 11 slajdů s placeholdery
     assets/                loga, fotky, ikony
     fonts/                 Schibsted Grotesk (lokálně)
   candidates-slide/

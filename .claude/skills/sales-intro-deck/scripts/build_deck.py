@@ -22,7 +22,7 @@ HERE = Path(__file__).resolve().parent
 SKILL = HERE.parent
 DECK = SKILL / "deck"
 CONFIG = SKILL / "config.json"
-EXPECTED_SLIDES = 10
+EXPECTED_SLIDES = 11
 
 MONTHS = ["leden", "únor", "březen", "duben", "květen", "červen",
           "červenec", "srpen", "září", "říjen", "listopad", "prosinec"]
