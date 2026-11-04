@@ -7,6 +7,19 @@
       "status": "client"
     },
     {
+      "name": "Seznam.cz",
+      "sector": "internet, média",
+      "status": "client",
+      "logo": "logo-seznam.svg"
+    },
+    {
+      "name": "T-Mobile",
+      "text": "T-Mobile",
+      "sector": "telekomunikace",
+      "status": "client",
+      "logo": "logo-tmobile.svg"
+    },
+    {
       "name": "Home Credit",
       "logo": "logo-homecredit.png",
       "sector": "spotřebitelské úvěry / finance"
@@ -30,8 +43,8 @@
     },
     {
       "name": "BDO",
-      "text": "BDO",
-      "sector": "audit a poradenství"
+      "sector": "audit a poradenství",
+      "logo": "logo-bdo.png"
     }
   ]
 }

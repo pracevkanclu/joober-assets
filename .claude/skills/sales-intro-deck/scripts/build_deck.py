@@ -129,14 +129,24 @@ def build_html(company, date, candidates_url, partners):
     if clients:
         badge = ('<span class="badge"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.6" '
                  'stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg></span>')
-        ctiles = "".join('<div class="tile client"><img src="assets/%s" alt="%s">%s</div>' % (
-            html.escape(c["logo"], quote=True), html.escape(c["name"], quote=True), badge) for c in clients)
+        def ctile(c):
+            if c.get("logo") and c.get("text"):
+                inner = '<img class="mark" src="assets/%s" alt=""><span class="ctext">%s</span>' % (
+                    html.escape(c["logo"], quote=True), html.escape(c["text"]))
+            elif c.get("logo"):
+                inner = '<img src="assets/%s" alt="%s">' % (html.escape(c["logo"], quote=True), html.escape(c["name"], quote=True))
+            else:
+                inner = '<span class="ctext">%s</span>' % html.escape(c.get("text") or c["name"])
+            return '<div class="tile client">%s%s</div>' % (inner, badge)
+        ctiles = "".join(ctile(c) for c in clients)
         group = '<div class="grp"><div class="lab ok">Spolupracujeme</div><div class="ctiles">%s</div></div>' % ctiles
     else:
         group = ""
     s = tpl.replace("{{PARTNER_TILES}}", tiles)
     s = s.replace("{{CLIENT_GROUP}}", group)
     s = s.replace("{{CLIENT_W}}", "300")
+    if len(clients) > 1:
+        s = s.replace('<div class="prow">', '<div class="prow stack">', 1)
     s = s.replace("{{TILE_COLS}}", str(len(partners) + 1))
     s = s.replace("{{CANDIDATES_PNG}}", candidates_url)
     s = s.replace("{{DATE}}", html.escape(date))
