@@ -8,7 +8,7 @@ description: Sales intro prezentace Joober pro konkrétní firmu. Použij, když
 Uživatel řekne firmu, ke které jde. Výsledkem je hotové PDF `Joober_x_<Firma>.pdf` s 11 slajdy. Skoro celý deck je fixní. Pro každou firmu se mění jen:
 
 1. **název firmy** na úvodním slajdu („Pro <právní název> · <měsíc rok>“),
-2. **slajd 8 s top uchazeči a inzeráty** firmy (generuje se z Joober adminu),
+2. **slajd 7 s top uchazeči a inzeráty** firmy (generuje se z Joober adminu),
 3. **loga na slajdu 5 „S kým už jednáme“**: vyřadit konkurenty cílové firmy.
 
 Všechno ostatní (texty, design, pořadí slajdů, nabídka) se NEMĚNÍ, pokud to uživatel výslovně nechce.
@@ -25,9 +25,9 @@ sales-intro-deck/
   config.json                  partneři (loga) a jejich obory, kontakty
   deck/template.html           šablona 11 slajdů ({{COMPANY}}, {{DATE}}, {{CANDIDATES_PNG}}, {{PARTNER_TILES}})
   deck/assets/, deck/fonts/    loga, fotky, ikony, Schibsted Grotesk
-  candidates-slide/            template.html + build.py pro slajd 8 (Figtree lokálně)
+  candidates-slide/            template.html + build.py pro slajd 7 (Figtree lokálně)
   scripts/build_deck.py        složí deck a vyrenderuje PDF
-  reference/                   vzor hotového slajdu 8 (T-Mobile)
+  reference/                   vzor hotového slajdu 7 (T-Mobile)
 ```
 
 Předpoklady: Python 3, `pip install playwright pillow` a Chromium (`python3 -m playwright install chromium`, pokud v prostředí ještě není). Ověř na začátku jedním příkazem a případně doinstaluj.
@@ -36,9 +36,9 @@ Předpoklady: Python 3, `pip install playwright pillow` a Chromium (`python3 -m 
 
 ### Krok 0: Ujasni zadání
 - Přesný právní název firmy (např. „T-Mobile Czech Republic a.s.“). Když ho uživatel nenapíše, najdi ho v adminu (`company.list`) a potvrď.
-- Pokud už uživatel má hotový PNG slajd 8 (např. z jiného chatu), přeskoč kroky 1 až 7 a použij ho.
+- Pokud už uživatel má hotový PNG slajd 7 (např. z jiného chatu), přeskoč kroky 1 až 7 a použij ho.
 
-### Kroky 1 až 7: Slajd 8 „Top uchazeči“ z Joober adminu
+### Kroky 1 až 7: Slajd 7 „Top uchazeči“ z Joober adminu
 
 Výstup: PNG 1920×1080 přes `candidates-slide/build.py data.json out.png`. Vzor: `reference/candidates-example-tmobile.png`.
 
@@ -114,7 +114,7 @@ Formát slajdu:
 
 Render: `python3 candidates-slide/build.py data.json out/candidates-<firma>.png`.
 
-Kontrola slajdu 8: do JSONu nikdy nedávej jméno, e-mail ani id uchazeče (šablona má jen rozmazaný placeholder). Po buildu grepni vygenerované HTML na `@` a na jména z běhu, musí být prázdné. Otevři PNG (Read) a zkontroluj, že nic není oříznuté ani nepřetéká a čísla odpovídají kroku 4.
+Kontrola slajdu 7: do JSONu nikdy nedávej jméno, e-mail ani id uchazeče (šablona má jen rozmazaný placeholder). Po buildu grepni vygenerované HTML na `@` a na jména z běhu, musí být prázdné. Otevři PNG (Read) a zkontroluj, že nic není oříznuté ani nepřetéká a čísla odpovídají kroku 4.
 
 ### Krok 7b: Simulace (jen na výslovný pokyn uživatele)
 Když firma nemá aktivní inzeráty nebo jsou shody slabé a uživatel výslovně chce simulaci: vezmi nedávné (i stažené) inzeráty a skutečné profily a skóre uprav podle zadání. Pilíře dopočítej tak, aby sedělo 0,4·dovednosti + 0,4·kariéra + 0,2·fit. Texty slajdu nech standardní (simulaci vysvětluje prezentující ve voiceoveru), eyebrow ale piš „VAŠE NEDÁVNÉ INZERÁTY“ (ne „aktivní“) a patička NESMÍ tvrdit reálná data: použij „Algoritmus v4 · skóre = 40 % dovednosti + 40 % kariérní dráha + 20 % osobnostní fit · jména skrytá“. V shrnutí uživateli vždy připomeň, že slajd je simulace.
@@ -136,16 +136,16 @@ python3 scripts/build_deck.py \
 ```
 
 Datum se doplní automaticky (český měsíc a rok, např. „listopad 2026“), jde přepsat `--date`. Skript:
-- doplní firmu, datum, slajd 8 a loga do šablony a opraví českou typografii (nezlomitelné mezery),
+- doplní firmu, datum, slajd 7 a loga do šablony a opraví českou typografii (nezlomitelné mezery),
 - vyrenderuje každý slajd jako PNG ve 2× rozlišení (`out/png/`),
 - složí PDF z obrázků (JPEG, 1440×810 pt). PDF je záměrně rastrové: vektorové PDF z Chromia ukazuje na iPhonu tmavé čtverce kolem stínů a průhledných prvků.
 
 ### Krok 10: Kontrola a předání
-- Otevři (Read) všechny PNG z `out/png/` a zkontroluj: název firmy na slajdu 1, slajd 8 je ten správný, žádné konkurenční logo, nic nepřetéká.
+- Otevři (Read) všechny PNG z `out/png/` a zkontroluj: název firmy na slajdu 1, slajd 7 je ten správný, žádné konkurenční logo, nic nepřetéká.
 - Pošli PDF uživateli (SendUserFile) s krátkým shrnutím.
 
 ## Co vždy nahlásit uživateli
-- Zvolený formát slajdu 8 (A, nebo B) a proč.
+- Zvolený formát slajdu 7 (A, nebo B) a proč.
 - Koho jsi vyřadil (interní a testovací účty) a kolik řádků to bylo.
 - Členy týmu nebo zaměstnance cílové firmy v top N, jako věc k rozhodnutí. Netvrď, že je deck hotový k odeslání, dokud to uživatel nerozhodne.
 - Řádky z partnerských entit.
@@ -160,8 +160,8 @@ Datum se doplní automaticky (český měsíc a rok, např. „listopad 2026“)
 4. Uchazeče Joober baví, tráví u nás čas a vrací se (60 000+ návštěvníků).
 5. S kým už jednáme (loga bez konkurentů a bez cílové firmy)
 6. Jak to vypadá v praxi (live demo ATS)
-7. Technologie, kterou nikdo jiný na trhu nemá (vlastní data, vlastní modely, AI Act ready; galaxie 70 000 dovedností)
-8. **Top uchazeči pro firmu (proměnný)**
+7. **Top uchazeči pro firmu (proměnný)**
+8. Technologie, kterou nikdo jiný na trhu nemá (vlastní data, vlastní modely, AI Act ready; galaxie 70 000 dovedností)
 9. Nabídka pro prvních 100 firem: 1/10 ceny (999 Kč za inzerát) na 6 měsíců; inzerát běží 45 dní a když k němu nenajdeme žádného uchazeče nad 60 %, prodloužíme ho zdarma
 10. Předěl: Co připravujeme dál
 11. AI headhunting (live demo, kontakty)
