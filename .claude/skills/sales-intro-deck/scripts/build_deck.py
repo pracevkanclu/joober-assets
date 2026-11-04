@@ -123,8 +123,20 @@ def build_html(company, date, candidates_url, partners):
     for key in ("{{COMPANY}}", "{{DATE}}", "{{CANDIDATES_PNG}}", "{{PARTNER_TILES}}", "{{TILE_COLS}}"):
         if key not in tpl:
             die("v template.html chybí placeholder %s" % key)
+    clients = [p for p in partners if p.get("status") == "client"]
+    partners = [p for p in partners if p.get("status") != "client"]
     tiles = "\n    ".join(tile_html(p) for p in partners)
+    if clients:
+        badge = ('<span class="badge"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.6" '
+                 'stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg></span>')
+        ctiles = "".join('<div class="tile client"><img src="assets/%s" alt="%s">%s</div>' % (
+            html.escape(c["logo"], quote=True), html.escape(c["name"], quote=True), badge) for c in clients)
+        group = '<div class="grp"><div class="lab ok">Spolupracujeme</div><div class="ctiles">%s</div></div>' % ctiles
+    else:
+        group = ""
     s = tpl.replace("{{PARTNER_TILES}}", tiles)
+    s = s.replace("{{CLIENT_GROUP}}", group)
+    s = s.replace("{{CLIENT_W}}", "300")
     s = s.replace("{{TILE_COLS}}", str(len(partners) + 1))
     s = s.replace("{{CANDIDATES_PNG}}", candidates_url)
     s = s.replace("{{DATE}}", html.escape(date))

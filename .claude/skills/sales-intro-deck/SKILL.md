@@ -121,7 +121,7 @@ Když firma nemá aktivní inzeráty nebo jsou shody slabé a uživatel výslovn
 
 ### Krok 8: Konkurenti na slajdu 5 „S kým už jednáme“
 
-`config.json` obsahuje partnery (loga) s obory. Vyřaď každé logo, které je přímou konkurencí cílové firmy (stejný trh nebo produkt). Příklady: pro T-Mobile vyřadit O2; pro personální agenturu vyřadit jiné personální agentury a job portály. Vždy vyřaď i logo samotné cílové firmy (např. ABRA v decku pro ABRA). Když si nejsi jistý, zeptej se. Vyřazení vždy uveď v závěrečném shrnutí.
+`config.json` obsahuje partnery (loga) s obory. Vyřaď každé logo, které je přímou konkurencí cílové firmy (stejný trh nebo produkt). Příklady: pro T-Mobile vyřadit O2; pro personální agenturu vyřadit jiné personální agentury a job portály. Partneři se `"status": "client"` (uzavřený deal, teď Předvýběr) se na slajdu zobrazí zeleně ve skupině „Spolupracujeme“ vlevo, ostatní ve skupině „Jednáme s“. U personálních agentur a job portálů se zeptej, jestli klienta ukázat (může působit jako konkurence). Když uzavřete deal s další firmou, nastav jí v `config.json` `"status": "client"`. Vždy vyřaď i logo samotné cílové firmy (např. ABRA v decku pro ABRA). Když si nejsi jistý, zeptej se. Vyřazení vždy uveď v závěrečném shrnutí.
 
 Když uživatel řekne, že s novou firmou jednáte, přidej ji do `config.json` (logo do `deck/assets/`) a commitni.
 
@@ -158,7 +158,7 @@ Datum se doplní automaticky (český měsíc a rok, např. „listopad 2026“)
 2. Kdo jsme a proč jsme do toho šli (zakladatelé, tým, CzechInvest)
 3. Spuštěno pro uchazeče. Teď stavíme pro firmy.
 4. Uchazeče Joober baví, tráví u nás čas a vrací se: vlevo co uchazeč dostane (mockup + 2 body), vpravo 4 dlaždice: 60 000+ návštěvníků, 5 000 na Instagramu, 15:50 min průměrná návštěva registrovaných (5× déle), 33 % se vrací (3× častěji).
-5. S kým už jednáme (loga bez konkurentů a bez cílové firmy)
+5. S kým už jednáme (zeleně klienti „Spolupracujeme“, pak „Jednáme s“; bez konkurentů a bez cílové firmy)
 6. Jak to vypadá v praxi (live demo ATS)
 7. **Top uchazeči pro firmu (proměnný)**
 8. Technologie, kterou nikdo jiný na trhu nemá (vlastní data, vlastní modely, AI Act ready; galaxie 70 000 dovedností)

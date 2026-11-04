@@ -1,6 +1,12 @@
 {
   "partners": [
     {
+      "name": "Předvýběr",
+      "logo": "logo-predvyber.png",
+      "sector": "personální agentura",
+      "status": "client"
+    },
+    {
       "name": "Home Credit",
       "logo": "logo-homecredit.png",
       "sector": "spotřebitelské úvěry / finance"
