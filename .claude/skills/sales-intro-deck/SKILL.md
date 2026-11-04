@@ -157,7 +157,7 @@ Datum se doplní automaticky (český měsíc a rok, např. „listopad 2026“)
 1. Úvod: eyebrow „AI kariérní marketplace · revoluce v hledání práce“, headline „Pracovní portály pořád vypadají jako v 90. letech. Rozhodli jsme se to změnit.“, subheadline „Uchazeče oskórujeme, seřadíme a vysvětlíme, proč sedí. Vy si jen vyberete.“ + „Pro <firma> · <datum>“
 2. Kdo jsme a proč jsme do toho šli (zakladatelé, tým, CzechInvest)
 3. Spuštěno pro uchazeče. Teď stavíme pro firmy.
-4. Uchazeče Joober baví, tráví u nás čas a vrací se (60 000+ návštěvníků).
+4. Uchazeče Joober baví, tráví u nás čas a vrací se: vlevo co uchazeč dostane (mockup + 2 body), vpravo 4 dlaždice: 60 000+ návštěvníků, 5 000 na Instagramu, 15:50 min průměrná návštěva registrovaných (5× déle), 33 % se vrací (3× častěji).
 5. S kým už jednáme (loga bez konkurentů a bez cílové firmy)
 6. Jak to vypadá v praxi (live demo ATS)
 7. **Top uchazeči pro firmu (proměnný)**
